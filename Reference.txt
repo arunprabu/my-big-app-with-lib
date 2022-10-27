@@ -63,3 +63,29 @@ Creating and Using Library
         then, check localhost:4200 
 
 ----
+
+ thats it...
+
+  if you are modifying your library.. don't forget to build the library again.
+  Note: if your library has http calls, you need to import 'HttpClientModule' in library's module.
+  And If you do binding, *ngIf, *ngFor kinds of stuff, you need to import 'CommonModule' in library's module.
+
+
+
+You can also create a tar archive file
+TAR Archive file compressed using Gnu Zip (gzip) for the library
+
+cd dist/my-weather-lib 
+npm pack
+After this is over, you can install the package using npm install cmd
+cd .. 
+cd ..
+npm install ./dist/my-weather-lib/my-weather-lib-0.0.1.tgz
+
+Then, find the above package inside node_modules folder 
+Finally, don't forget to remove the entry in main tsconfig.json (workspace level file)
+
+Restart your app and then check it. 
+================
+Todo:
+Further Reading: How to publish package into npm...
