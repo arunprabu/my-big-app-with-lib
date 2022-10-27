@@ -25,7 +25,6 @@ export class MyWeatherLibComponent implements OnInit {
         console.log(res);
         this.weather = res;
       })
-
   }
 
 }
