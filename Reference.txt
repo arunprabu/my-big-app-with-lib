@@ -89,3 +89,5 @@ Restart your app and then check it.
 ================
 Todo:
 Further Reading: How to publish package into npm...
+
+also lear more about https://www.npmjs.com/package/ng-packagr
