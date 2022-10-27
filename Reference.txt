@@ -1,0 +1,65 @@
+Angular library
+--
+  You do not need a project. Instead you need a workspace. It's an empty project 
+
+
+Creating and Using Library 
+--
+  4 Steps 
+  --
+    Step 1
+    --
+      Create workspace. 
+        ng new my-big-app --create-application=false 
+
+    Step 2: 
+    --
+      Create a library
+      cd my-big-app 
+      ng g library my-weather-lib --prefix=mwl      (this is selector's prefix) 
+
+    
+    Step 3: 
+    --
+      create an angular app 
+      ng g application weather-app-demo 
+
+    Step 4: 
+    ---
+      Make use of the library in an angular app 
+      i.e  make use of my-weather-lib in weather-app-demo
+
+      Step 4.1) Take a build of library 
+        ng build my-weather-lib 
+
+      Step 4.2) use the above library  in weather-app-demo project 
+        in app.module.ts of weather-app-demo 
+        
+        import { MyWeatherLibModule } from 'my-weather-lib';
+
+        @NgModule({
+          declarations: [
+            AppComponent
+          ],
+          imports: [
+            BrowserModule,
+            AppRoutingModule,
+            MyWeatherLibModule // use the library here 
+          ],
+          providers: [],
+          bootstrap: [AppComponent]
+        })
+
+      Step 4.3) Now, in app.comp.html, use the selector of the library 
+      
+        <div>
+          <h1>Demo of weather-app</h1>
+          <mwl-my-weather-lib></mwl-my-weather-lib>
+        </div>
+
+      Step 4.4) Let's start the server from my-big-app 
+        
+        ng serve 
+        then, check localhost:4200 
+
+----
